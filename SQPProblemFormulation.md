@@ -1,9 +1,19 @@
 
-%% Problem
+## Problem
 
-%% QP subproblem
+$$ min\ f = x_1^2 +(x_2-3)^2 $$
 
-%% Code
+S.T.
+
+$$ g_1: x_2^2-2x_1 \leq 0 $$
+
+$$ g_2: (x_2-1)^2+5x_1-15 \leq 0 $$
+
+## QP subproblem
+
+$$ L =  x_1^2 +(x_2-3)^2 + \mu_1( x_2^2-2x_1) + \mu_2((x_2-1)^2+5x_1-15)$$
+
+## Code
 ```
 f= @(x) x(1)^2 +(x(2)-3)^2;
 df = @(x) [2*x(1) , 2*(x(2)-3)];
@@ -80,6 +90,7 @@ end
 X
 ```
 
-%% Final Results
+## Final Results
+
 X1 = 1.0602
 X2 = 1.4562
