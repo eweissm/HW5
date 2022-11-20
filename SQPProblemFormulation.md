@@ -16,6 +16,20 @@ $$ L =  x_1^2 +(x_2-3)^2 + \mu_1( x_2^2-2x_1) + \mu_2((x_2-1)^2+5x_1-15)$$
 $$ \nabla L = \begin{pmatrix}2x_1-2\mu _1+5\mu _2\\
 2x_2-6+2\mu _1\cdot x_2+\mu _2(2x_2-2)\end{pmatrix}$$
 
+$$Lxx = \begin{pmatrix}2&0\\ 
+0&2+2\mu _1+2\mu _2\end{pmatrix}$$
+
+therefore the qp subproblem is 
+
+$$ min_s\ s^T \begin{pmatrix}2&0\\ 
+0&2+2\mu _1+2\mu _2\end{pmatrix} s + \begin{pmatrix}2x_1&2x_2-6\end{pmatrix}s$$
+
+S.T.
+
+$$\begin{pmatrix}-2&2x_2\\
+5&2x_2-2\end{pmatrix} s + \begin{pmatrix}x_2^2-2x_1\\
+\left(x_2-1\right)^2+5x_1-15\end{pmatrix} \leq 0$$
+
 ## Code
 ```
 f= @(x) x(1)^2 +(x(2)-3)^2;
