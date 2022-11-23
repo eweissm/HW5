@@ -1,4 +1,3 @@
-
 ## Problem
 
 $$ min\ f = x_1^2 +(x_2-3)^2 $$
@@ -31,6 +30,7 @@ $$\begin{pmatrix}-2&2x_2\\
 \left(x_2-1\right)^2+5x_1-15\end{pmatrix} \leq 0$$
 
 ## Code
+Note: I used matlab because I could not find a python package that could handle active sets
 ```
 f= @(x) x(1)^2 +(x(2)-3)^2;
 df = @(x) [2*x(1) , 2*(x(2)-3)];
